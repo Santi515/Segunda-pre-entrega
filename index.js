@@ -14,41 +14,39 @@ let productoC = new Producto("Gaseosas", 150, 42)
 let productoCompra = prompt("Escriba que producto quisiera comprar: \n1 - Hamburguesas $180 c/u \n2 - Panchos $120 c/u \n3 - Gaseosas $150 c/u \n4 - FIN");
 let precioSubtotal = 0;
 
-//Todavia me falta conseguir que la consola te vuelva a pedir que ingreses la cantidad de productos que queres por 2da o 3era vez
-
 while(productoCompra.toLowerCase() != "fin"){
 
     if(productoCompra.toLowerCase() == 'hamburguesas'){
-        let cantidadProductoHamburguesas = prompt("Ingrese que cantidad de " + nombreProductoA + " desea comprar por favor.")
+        let cantidadProductoHamburguesas = prompt("Ingrese que cantidad de " + productoA.nombre + " desea comprar por favor.")
 
-        if(cantidadProductoHamburguesas <= stockProductoA && cantidadProductoHamburguesas >= 0){
-            precioSubtotal = precioSubtotal + (cantidadProductoHamburguesas * precioProductoA)
+        if(cantidadProductoHamburguesas <= productoA.stock && cantidadProductoHamburguesas >= 0){
+            precioSubtotal = precioSubtotal + (cantidadProductoHamburguesas * productoA.precio)
             alert("Seria un total de " + precioSubtotal + " pesos.")
         }
         else{
-            alert("Disculpe, pero actualmente tenemos " + stockProductoA + " unidades de este producto.")
+            alert("Disculpe, pero actualmente tenemos " + productoA.stock + " unidades de este producto.")
         }
     }
     else if(productoCompra.toLowerCase() == 'panchos'){
-        let cantidadProductoPanchos = prompt("Ingrese que cantidad de " + nombreProductoB + " desea comprar por favor.")
+        let cantidadProductoPanchos = prompt("Ingrese que cantidad de " + productoB.nombre + " desea comprar por favor.")
 
-        if(cantidadProductoPanchos <= stockProductoB && cantidadProductoPanchos >= 0){
-            precioSubtotal = precioSubtotal + (cantidadProductoPanchos * precioProductoB)
+        if(cantidadProductoPanchos <= productoB.stock && cantidadProductoPanchos >= 0){
+            precioSubtotal = precioSubtotal + (cantidadProductoPanchos * productoB.precio)
             alert("Seria un total de " + precioSubtotal + " pesos.")
         }
         else{
             alert("Disculpe, pero actualmente tenemos " + stockProductoB + " unidades de este producto.")
         }
     }
-    else if(productoCompra.toLowerCase() == 'gaseosa'){
-        let cantidadProductoGaseosas = prompt("Ingrese que cantidad de " + nombreProductoC + " desea comprar por favor.")
+    else if(productoCompra.toLowerCase() == 'gaseosas'){
+        let cantidadProductoGaseosas = prompt("Ingrese que cantidad de " + productoC.nombre + " desea comprar por favor.")
 
-        if(cantidadProductoGaseosas <= stockProductoC && cantidadProductoGaseosas >= 0){
-            precioSubtotal = precioSubtotal + (cantidadProductoGaseosas * precioProductoC)
+        if(cantidadProductoGaseosas <= productoC.stock && cantidadProductoGaseosas >= 0){
+            precioSubtotal = precioSubtotal + (cantidadProductoGaseosas * productoC.precio)
         alert("Seria un total de " + precioSubtotal + " pesos.")
         }
         else{
-            alert("Disculpe, pero actualmente tenemos " + stockProductoC + " unidades de este producto.")
+            alert("Disculpe, pero actualmente tenemos " + productoC.stock + " unidades de este producto.")
         }
     }
     else{
